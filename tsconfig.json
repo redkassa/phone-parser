@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": false,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "lib": ["ES7", "DOM"],
+    "target": "es5",
+    "noEmit": false,
+    "strict": true,
+    "sourceMap": true,
+    "experimentalDecorators": false,
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "./dist",
+    "outDir": "./dist",
+    "rootDir": "./src",
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
+}
