@@ -1,19 +1,33 @@
-const webpackMerge = require('webpack-merge');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const commonConfig = require('./webpack.config.common');
 
-const { paths } = commonConfig.externals;
+const PATHS = {
+  src: path.resolve(__dirname, '../src'),
+  dist: path.resolve(__dirname, '../dist'),
+  example: path.resolve(__dirname, '../example'),
+};
 
-module.exports = webpackMerge(commonConfig, {
+module.exports = {
   mode: 'development',
 
   devtool: 'eval-source-map',
 
-  entry: `${paths.example}/index.ts`,
+  context: PATHS.src,
+
+  entry: `${PATHS.example}/index.ts`,
+
+  output: {
+    path: PATHS.dist,
+    filename: 'index.js',
+  },
+
+  resolve: {
+    extensions: ['.js', '.ts'],
+  },
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: `${paths.example}/assets/index.html`,
+      template: `${PATHS.example}/assets/index.html`,
     }),
   ],
 
@@ -35,7 +49,7 @@ module.exports = webpackMerge(commonConfig, {
   },
 
   devServer: {
-    contentBase: paths.dist,
+    contentBase: PATHS.dist,
     port: 8080,
   },
-});
+};

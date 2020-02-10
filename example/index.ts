@@ -1,4 +1,4 @@
-import { parsePhoneNumber } from '../src/index';
+import { parsePhoneNumber } from '../src';
 import { regexp } from '../src/constants';
 
 document.addEventListener('DOMContentLoaded', () => {
