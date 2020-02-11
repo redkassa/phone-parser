@@ -1,6 +1,6 @@
 {
   "name": "@redkassa/phone-parser",
-  "version": "0.9.3",
+  "version": "0.9.9",
   "main": "dist/index.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack/webpack.config.js",

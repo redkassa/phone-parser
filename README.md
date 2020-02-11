@@ -27,10 +27,10 @@ const result = parsePhoneNumber('12089999999');
 /*
 
 result = {
-	code: 'US',
-	dialCode: '+1',
-	nationalNumber: '2089999999',
-	formattedNumber: '+1 2089999999',
+  code: 'US',
+  dialCode: '+1',
+  nationalNumber: '2089999999',
+  formattedNumber: '+1 2089999999',
 }
 
 */
@@ -67,22 +67,22 @@ You can tell the parser how to determine the value passed to it.
 ```javascript
 
 const resolvers = [
-	{
-	  options: [
-	    {
-	      value: '8',
-	      replace: true,
-	    },
-	    {
-	      value: '9',
-	      replace: false,
-	    },
-	  ],
-	  target: {
-	    firstChar: '7',
-	    code: 'RU',
-	  },
-	},
+  {
+    options: [
+      {
+        value: '8',
+        replace: true,
+      },
+      {
+        value: '9',
+        replace: false,
+      },
+    ],
+    target: {
+      firstChar: '7',
+      code: 'RU',
+    },
+  },
 ];
 
 const result1 = parsePhoneNumber('89191238899', { resolvers });
@@ -91,17 +91,17 @@ const result2 = parsePhoneNumber('9191238899', { resolvers });
 /*
 
 result1 = {
-	code: 'RU',
-	dialCode: '+7',
-	nationalNumber: '9191238899',
-	formattedNumber: '+7 9191238899',
+  code: 'RU',
+  dialCode: '+7',
+  nationalNumber: '9191238899',
+  formattedNumber: '+7 9191238899',
 }
 
 result2 = {
-	code: 'RU',
-	dialCode: '+7',
-	nationalNumber: '9191238899',
-	formattedNumber: '+7 9191238899',
+  code: 'RU',
+  dialCode: '+7',
+  nationalNumber: '9191238899',
+  formattedNumber: '+7 9191238899',
 }
 
 */
@@ -121,10 +121,10 @@ result2 = {
 ```javascript
 
 const formats = [
-	{
-	  code: 'US',
-	  mask: '###-###-####',
-	},
+  {
+    code: 'US',
+    mask: '###-###-####',
+  },
 ];
 
 const result = parsePhoneNumber('12089999999', { formats });
@@ -132,10 +132,10 @@ const result = parsePhoneNumber('12089999999', { formats });
 /*
 
 result = {
-	code: 'US',
-	dialCode: '+1',
-	nationalNumber: '2089999999',
-	formattedNumber: '+1 208-999-9999',
+  code: 'US',
+  dialCode: '+1',
+  nationalNumber: '2089999999',
+  formattedNumber: '+1 208-999-9999',
 }
 
 */
