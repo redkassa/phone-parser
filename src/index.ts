@@ -63,13 +63,22 @@ const applyResolvers = (
         i.countries.find(country => country.code === target.code),
       ) || null;
 
+    const country = resolvedCell
+      ? resolvedCell.countries.find(i => i.code === target.code)
+      : null;
+
+    const dialCode = country
+      ? country.dialCode.replace(REGEXP_ONLY_DIGITS, '')
+      : null;
+
     const options = resolver.options.find(i => i.value === firstChar);
 
     if (options) {
       if (!options.replace) {
-        resolvedPhone = `${target.firstChar}${resolvedPhone}`;
+        resolvedPhone = `${dialCode || target.firstChar}${resolvedPhone}`;
       } else {
-        resolvedPhone = `${target.firstChar}${resolvedPhone.substring(1)}`;
+        resolvedPhone = `${dialCode ||
+          target.firstChar}${resolvedPhone.substring(1)}`;
       }
     }
   }
@@ -122,7 +131,7 @@ const parsePhoneNumber = (
         i.dialCode.includes(estimatedDialCode),
       );
 
-      if (targetCountries.length > 1) {
+      if (targetCountries.length > 1 || !targetCountries.length) {
         return unknownPhone;
       }
 
