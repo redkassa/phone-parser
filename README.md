@@ -45,21 +45,21 @@ You can tell the parser how to determine the value passed to it.
 
 **resolvers** - it is an array consisting of objects with the following properties:
 
-||||
+| Property | Type | Description|
 |---|---|---|
 | **options** | Array (required) | Values ​​passed to the parser which will be given are replaced or supplemented by the dial code |
 | **target** | Object (required) | Data for calculating the dial code of the country to which the input value is given |
 
 #### option
 
-||||
+| Property | Type | Description|
 |---|---|---|
 | **value** | string (required) | Values ​​passed to the parser |
 | **replace** | boolean | If *true* - replaces the value with the dial phone code. If *false* puts the country dial code before this value. The dial code is determined based on data from target. |
 
 #### target
 
-||||
+| Property | Type | Description|
 |---|---|---|
 | **firstChar** | string (required) | The first digit of the country code |
 | **code** | string (required) | Country code (US, RU, ...) |
@@ -112,7 +112,7 @@ result2 = {
 
 **formats** - it is an array consisting of objects with the following properties:
 
-||||
+| Property | Type | Description|
 |---|---|---|
 | **code** | string (required) | Country code (US, RU, ...) |
 | **mask** | string | Mask for the entered number without a dial code. The dial code will be substituted automatically. |
