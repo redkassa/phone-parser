@@ -18,7 +18,7 @@ yarn add @redkassa/phone-parser
 
 ## Использование
 
-```
+```javascript
 
 const result = parsePhoneNumber('12089999999');
 
@@ -62,7 +62,7 @@ result = {
 | **firstChar** | string (required) | Первая цифра кода страны |
 | **code** | string (required) | Код страны |
 
-```
+```javascript
 
 const resolvers = [
 	{
@@ -116,7 +116,7 @@ result2 = {
 | **mask** | string | Маска для вводимого номера без телефонного кода страны. Телефонный код страны будет подставляться автоматически. |
 | **appendTail** | boolean | Добавлять цифры, которые не учитываются в маске, к номеру телефона. |
 
-```
+```javascript
 
 const formats = [
 	{

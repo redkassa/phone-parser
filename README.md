@@ -20,7 +20,7 @@ yarn add @redkassa/phone-parser
 
 ## Usage
 
-```
+```javascript
 
 const result = parsePhoneNumber('12089999999');
 
@@ -64,7 +64,7 @@ You can tell the parser how to determine the value passed to it.
 | **firstChar** | string (required) | The first digit of the country code |
 | **code** | string (required) | Country code (US, RU, ...) |
 
-```
+```javascript
 
 const resolvers = [
 	{
@@ -118,7 +118,7 @@ result2 = {
 | **mask** | string | Mask for the entered number without a dial code. The dial code will be substituted automatically. |
 | **appendTail** | boolean | Add numbers that are not counted in the mask to the phone number. |
 
-```
+```javascript
 
 const formats = [
 	{
