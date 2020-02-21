@@ -20,6 +20,8 @@ yarn add @redkassa/phone-parser
 
 ```javascript
 
+import { parsePhoneNumber } from '@redkassa/phone-parser';
+
 const result = parsePhoneNumber('12089999999');
 
 /*
@@ -63,6 +65,8 @@ result = {
 | **code** | string (required) | Код страны |
 
 ```javascript
+
+import { parsePhoneNumber } from '@redkassa/phone-parser';
 
 const resolvers = [
   {
@@ -117,6 +121,8 @@ result2 = {
 | **appendTail** | boolean | Добавлять цифры, которые не учитываются в маске, к номеру телефона. |
 
 ```javascript
+
+import { parsePhoneNumber } from '@redkassa/phone-parser';
 
 const formats = [
   {

@@ -22,6 +22,8 @@ yarn add @redkassa/phone-parser
 
 ```javascript
 
+import { parsePhoneNumber } from '@redkassa/phone-parser';
+
 const result = parsePhoneNumber('12089999999');
 
 /*
@@ -65,6 +67,8 @@ You can tell the parser how to determine the value passed to it.
 | **code** | string (required) | Country code (US, RU, ...) |
 
 ```javascript
+
+import { parsePhoneNumber } from '@redkassa/phone-parser';
 
 const resolvers = [
   {
@@ -119,6 +123,8 @@ result2 = {
 | **appendTail** | boolean | Add numbers that are not counted in the mask to the phone number. |
 
 ```javascript
+
+import { parsePhoneNumber } from '@redkassa/phone-parser';
 
 const formats = [
   {
